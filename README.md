@@ -8,8 +8,19 @@ I have also used CMake project based on  youtube video "LIVESTREAM: Setting up F
 # manual steps to setup on macOS
 
 * Install ffmpeg with brew (See example log in gist https://gist.github.com/kjelloh/51b02187d5b8ff2dd3fcdf58b5fda1e8#file-brew_install_ffmpeg_220127-log)
-* 
+* For your information - FFmpeg brew installation seems to be located as follows,
+``` 
+/usr/local/Cellar/ffmpeg/4.4.1_5/lib/libavcodec.dylib
+/usr/local/Cellar/ffmpeg/4.4.1_5/lib/libavdevice.dylib
+/usr/local/Cellar/ffmpeg/4.4.1_5/lib/libavfilter.dylib
+/usr/local/Cellar/ffmpeg/4.4.1_5/lib/libavformat.dylib
+/usr/local/Cellar/ffmpeg/4.4.1_5/lib/libavutil.dylib
+/usr/local/Cellar/ffmpeg/4.4.1_5/lib/libswresample.dylib
+/usr/local/Cellar/ffmpeg/4.4.1_5/lib/libswscale.dylib
+```
 
-
-
-
+```
+/usr/local/Cellar/ffmpeg/4.4.1_5/include
+```
+* There is a CMakeLists.txt but it DOES NOT WORK (Can we get something better than Cmake already?)
+* For now there is vscode json files to build with Gcc 13 on macOS.
