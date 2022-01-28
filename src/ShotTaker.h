@@ -14,13 +14,13 @@ public:
 
     std::vector<std::filesystem::path> take_shots(int n);
 private:
-    void InitializeEncode(AVCodecContext* decoder_ctx,AVCodecParameters* codec_params,AVStream* stream);
-  void InitializeColorSpaceConverter(AVCodecContext* decoder_cts);
-    void InitializeEncoder(AVCodec* decoder, AVCodecParameters* codec_params);
+    void InitializeEncoder(AVCodecContext* decoder_ctx,AVCodecParameters* codec_params,AVStream* stream);
+    void InitializeColorSpaceConverter(AVCodecContext* decoder_ctx);
+    void InitializeDecoder(AVCodec* decoder, AVCodecParameters* codec_params);
     void Cleanup();
     void InitializationError(std::string const& err);
 
-    AVFormatContext* format_cts_ = nullptr;
+    AVFormatContext* format_ctx_ = nullptr;
     AVCodecContext* decoder_ctx_ = nullptr;
     AVCodecContext* encoder_ctx_ = nullptr;
     SwsContext* sws_ctx_ = nullptr;
