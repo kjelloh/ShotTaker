@@ -1,0 +1,30 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "C/C++: g++-11 build active file",
+			"command": "/usr/local/bin/g++-11",
+			"args": [
+				// "-v",
+				"-fdiagnostics-color=always",
+				"-I","/usr/local/Cellar/ffmpeg/4.4.1_5/include",
+				"-L","/usr/local/Cellar/ffmpeg/4.4.1_5/lib",
+				"-o","${fileDirname}/${fileBasenameNoExtension}",
+				"${file}",
+				// "-llibavcodec -llibavdevice -llibavfilter -llibavformat -llibavutil -llibswresample -llibswscale"
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "compiler: /usr/local/bin/g++-11"
+		}
+	]
+}
